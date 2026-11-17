@@ -34,6 +34,8 @@ jobs:
           mkdir -p _site
           cp index.html menu.html style.css site.js _site/
           cp -R assets _site/
+          css_version=$(sha256sum _site/style.css | cut -c1-12)
+          sed -i "s/href=\"style.css\"/href=\"style.css?v=${css_version}\"/" _site/index.html _site/menu.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
