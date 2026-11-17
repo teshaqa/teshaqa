@@ -185,6 +185,8 @@ button { font: inherit; color: inherit; }
   .menu-hero .hero-photo::after { background: linear-gradient(90deg, var(--dark), #21150ec2 35%, #21150e44); }
 }
 @media (max-width: 500px) {
+  .menu-jump { gap: .35rem; }
+  .menu-jump a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: .55rem; }
   .specialty-grid { grid-template-columns: 1fr; }
   .specialty-grid article { padding: .95rem 0; }
   .specialty-grid article + article { border-left: 0; border-top: 1px solid var(--line); }
