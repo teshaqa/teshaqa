@@ -130,10 +130,10 @@ button { font: inherit; color: inherit; }
 .menu-hero .hero-photo { left: 32%; }
 .menu-hero-inner > p:last-child { color: #ecdfd1; }
 .menu-content { padding-top: 2rem; }
-.menu-jump { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.4rem; }
+.menu-jump { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-bottom: 1.4rem; }
 .menu-jump a { background: var(--sand); text-decoration: none; font-weight: 700; padding: .45rem 1rem; font-size: .88rem; }
 .menu-jump a:hover { background: #e6d3b9; }
-.menu-grid { display: grid; gap: 1.25rem; }
+.menu-grid { display: grid; gap: 1.25rem; max-width: 1040px; margin-inline: auto; }
 .menu-card { border: 1px solid var(--line); background: #fbf6ed; padding: clamp(1rem, 2.6vw, 2rem); }
 .menu-card h2, .menu-contact h2 { font-size: clamp(1.75rem, 3vw, 2.45rem); }
 .menu-card h2 { padding-bottom: .75rem; border-bottom: 1px solid var(--line); }
@@ -145,6 +145,7 @@ button { font: inherit; color: inherit; }
 .menu-contact p { color: var(--muted); font-size: .93rem; }
 
 @media (min-width: 1000px) {
+  .menu-card h2 { text-align: center; }
   #pijet .menu-groups { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
   #pijet .menu-group:nth-child(2) { grid-row: span 2; }
   #pijet .menu-group:nth-child(2) dl { columns: 2; column-gap: 1.5rem; }
