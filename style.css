@@ -133,13 +133,23 @@ button { font: inherit; color: inherit; }
 .menu-jump { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.4rem; }
 .menu-jump a { background: var(--sand); text-decoration: none; font-weight: 700; padding: .45rem 1rem; font-size: .88rem; }
 .menu-jump a:hover { background: #e6d3b9; }
-.menu-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
+.menu-grid { display: grid; gap: 1.25rem; }
 .menu-card { border: 1px solid var(--line); background: #fbf6ed; padding: clamp(1rem, 2.6vw, 2rem); }
 .menu-card h2, .menu-contact h2 { font-size: clamp(1.75rem, 3vw, 2.45rem); }
-.menu-card dl { margin-top: .85rem; }
-.menu-card dl div { padding-block: .75rem; border-top: 1px solid var(--line); }
-.menu-card dt { font-weight: 700; }
-.menu-card dd, .menu-contact p { color: var(--muted); font-size: .93rem; }
+.menu-card h2 { padding-bottom: .75rem; border-bottom: 1px solid var(--line); }
+.menu-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 1.4rem 2rem; margin-top: 1.35rem; }
+.menu-group h3 { color: var(--bronze); font-size: 1.3rem; margin-bottom: .55rem; }
+.menu-group dl > div { display: flex; align-items: baseline; justify-content: space-between; gap: .6rem 1rem; padding-block: .5rem; border-bottom: 1px solid var(--line); }
+.menu-group dt { font-weight: 600; }
+.menu-group dd { flex: none; font-weight: 700; font-variant-numeric: tabular-nums; }
+.menu-contact p { color: var(--muted); font-size: .93rem; }
+
+@media (min-width: 1000px) {
+  #pijet .menu-groups { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+  #pijet .menu-group:nth-child(2) { grid-row: span 2; }
+  #pijet .menu-group:nth-child(2) dl { columns: 2; column-gap: 1.5rem; }
+  #pijet .menu-group:nth-child(2) dl > div { break-inside: avoid; }
+}
 .menu-contact { margin-top: 1.5rem; background: var(--sand); padding: clamp(1rem, 2.6vw, 2rem); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: center; }
 .menu-contact p { margin-top: .5rem; }
 
@@ -167,7 +177,7 @@ button { font: inherit; color: inherit; }
   .about-grid, .review-inner, .contact-grid { grid-template-columns: 1fr; gap: 1.55rem; }
   .about-copy { grid-row: 1; }
   .about-photo { min-height: 230px; }
-  .gallery-grid, .menu-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
   .gallery-picture { height: clamp(190px, 53vw, 350px); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem .9rem; }
   .qr { justify-self: start; }
